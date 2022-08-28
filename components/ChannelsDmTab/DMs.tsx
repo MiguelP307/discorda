@@ -1,7 +1,11 @@
-import { UserIcon, ShoppingCartIcon } from "@heroicons/react/solid";
+import { UserIcon, ShoppingCartIcon, MinusCircleIcon } from "@heroicons/react/solid";
+import Image from "next/image";
 
 
-function DMs() {
+
+
+
+function DMs({users} : Users) {
   return (
     <div className="channel-dms-tab">
         {/* Header */}
@@ -36,6 +40,27 @@ function DMs() {
                 </div>
 
                 {/*LastDms */}
+                <div className="flex flex-col gap-2">
+                    {
+                        users.map(user => (
+                            <div className="flex items-center">
+                                <div className="relative">
+                                    <Image
+                                        className="relative rounded-full"
+                                        src={user.userImage}
+                                        width={40}
+                                        height={40}
+                                    />
+                                
+                                    <MinusCircleIcon className="absolute h-5 bottom-[3px] right-0"/>
+                                </div>
+                                <p className="">{user.userNickname}</p>
+                            </div>
+                        ))
+                    }
+                </div>
+            
+                
             </div>
         </div>
 
