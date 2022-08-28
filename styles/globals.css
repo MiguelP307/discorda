@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .channel-dms-tab {
+        @apply flex flex-col h-screen;
+      };
+    .channel-dms-header {
+        @apply h-14 z-50 shadow-md bg-zinc-700 flex items-center justify-center;
+    };
+    .channel-dms-body {
+      @apply h-full w-72 bg-zinc-700 flex flex-col p-3 items-center gap-4;
+    };
+    .channel-dms-button {
+        @apply flex p-2 space-x-5 items-center w-full rounded-lg hover:brightness-125 hover:bg-zinc-700 hover:shadow-sm cursor-pointer;
+    };
+    .channel-dms-icons {
+        @apply h-9 ml-2 text-zinc-400;
+    };
+    .channel-dms-button-text {
+        @apply text-zinc-400 text-lg;
+    };
+   
+  }
