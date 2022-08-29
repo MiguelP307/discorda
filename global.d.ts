@@ -6,6 +6,7 @@ declare global {
         userImage: string;
         userStatus: string;
         userNickname: string;
+        userID: string;
      }
 
     interface Users {
