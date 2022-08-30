@@ -1,30 +1,15 @@
-import 
-{    UserIcon, 
-    ShoppingCartIcon, 
-    MinusCircleIcon,
-    MicrophoneIcon,
-    SpeakerphoneIcon,
-    CogIcon, 
-} from "@heroicons/react/solid";
+import { MinusCircleIcon, ShoppingCartIcon, UserIcon } from "@heroicons/react/solid";
 import Image from "next/image";
+import UserMiniTab from "../../UserMiniTab";
 
 
 
-
-
-function DMs({users} : Users) {
+function DMsBody({ users } : Users) {
   return (
-    <div className="channel-dms-tab">
-        {/* Header */}
-        <div className="channel-dms-header">
-            <input 
-                className="rounded-md focus:outline-none pl-[7px] bg-zinc-800 text-gray-300 placeholder:text-gray-400 placeholder:text-sm cursor-pointer"
-                placeholder=" Find or start a conversation" 
-                type="text"
-            />
-        </div>
-        {/* Boddy */}
+    <div className="flex flex-col w-72 h-full">
         <div className="channel-dms-body">
+
+
             {/*Buttons*/}
             <div className="flex flex-col w-full gap-1">
                 <div className="channel-dms-button">
@@ -40,6 +25,8 @@ function DMs({users} : Users) {
 
             {/*DMs Tab*/}
             <div className="w-full">
+
+
                 {/*Add DM */}
                 <div className="flex justify-between items-center w-full group">
                     <p className="text-zinc-400 text-md mx-2 font-medium group-hover:brightness-125">DIRECT MESSAGES</p>
@@ -67,41 +54,14 @@ function DMs({users} : Users) {
                         ))
                     }
                 </div>
-            
-                
             </div>
         </div>
 
         {/* UserMiniTab */}
-        <div className="channel-dms-userMiniTab">
-            
-            <div className="relative mt-1">
-                <Image
-                    className="relative rounded-full"
-                    src={user.userImage}
-                    width={40}
-                    height={40}
-                />
-                <div className="absolute bottom-[2px] right-[-3px] bg-zinc-700 rounded-full">
-                    <MinusCircleIcon className="h-[23px] p-[2px] text-red-600"/>
-                </div>
-            </div>
-
-            <div className="channel-dms-icons-miniTabButton">
-                <MicrophoneIcon className="channel-dms-icons-miniTab"/>
-            </div>
-
-            <div className="channel-dms-icons-miniTabButton">
-                <SpeakerphoneIcon className="channel-dms-icons-miniTab"/>
-            </div>
-
-            <div className="channel-dms-icons-miniTabButton">
-                <CogIcon className="channel-dms-icons-miniTab"/>
-            </div>
-        </div>
+        <UserMiniTab/>
     </div>
+
   )
 }
 
-export default DMs
-
+export default DMsBody

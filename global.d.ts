@@ -9,6 +9,7 @@ declare global {
         userID: string;
      }
 
+
     interface Users {
         users: [User];
     }

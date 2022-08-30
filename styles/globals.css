@@ -3,14 +3,11 @@
 @tailwind utilities;
 
 @layer components {
-    .channel-dms-tab {
-        @apply flex flex-col h-screen;
-      };
     .channel-dms-header {
-        @apply h-14 z-50 shadow-md bg-zinc-700 flex items-center justify-center;
+        @apply h-14 w-72 shadow-md bg-zinc-700 flex items-center justify-center border-b-zinc-800 border-b-[1px];
     };
     .channel-dms-body {
-      @apply h-full w-72 bg-zinc-700 flex flex-col p-3 items-center gap-4 overflow-scroll;
+        @apply h-full bg-zinc-700 flex flex-col p-3 items-center gap-4 overflow-scroll;
     };
     .channel-dms-button {
         @apply flex p-2 space-x-5 items-center w-full rounded-lg hover:brightness-125 hover:bg-zinc-700 hover:shadow-sm cursor-pointer;
@@ -22,12 +19,16 @@
         @apply text-zinc-400 text-lg;
     };
    .channel-dms-userMiniTab{
-        @apply h-20 z-50 bg-[#2d2d33] flex items-center justify-center;
+        @apply h-20 z-50 bg-[#2d2d33] flex items-center justify-between px-[10px] gap-1;
    };
    .channel-dms-icons-miniTab {
-        @apply h-6  text-zinc-400;
+        @apply h-6 text-zinc-400;
    };
    .channel-dms-icons-miniTabButton {
-        @apply flex p-2 justify-center items-center rounded-md hover:brightness-125 hover:bg-zinc-700 hover:shadow-sm cursor-pointer;
+        @apply flex p-[5px] justify-center items-center rounded-md hover:brightness-125 hover:bg-zinc-700 hover:shadow-sm cursor-pointer;
+   };
+
+   .mainHeader {
+        @apply h-14 flex-grow bg-[#474750] shadow-md flex border-b-zinc-700 border-b-[1px];
    };
   }
