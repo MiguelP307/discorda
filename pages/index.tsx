@@ -130,15 +130,17 @@ const usersTest : User[] = [
 
 export default function App() {
   return (
-    <div className="flex h-screen w-screen">
+    <div className="">
       <Head>
         <title>Discorda</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
-      <ServersTab/>
+      <div className='flex h-screen w-screen'>
+        <div className='sticky'><ServersTab/></div>
+        
 
-      <DMs users={usersTest}/>
+        <DMs users={usersTest}/>
+      </div>
       
     </div>
   )

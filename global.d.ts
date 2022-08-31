@@ -14,3 +14,22 @@ declare global {
         users: [User];
     }
 } 
+
+
+// Profile idea
+interface TestUser{
+
+    userProfile: Profile;
+    userID: string;
+    userStatus: string;
+    userFriends: [User];
+    userDMs: [User];
+    
+}
+
+interface Profile {
+    userNickname: string;
+    userTag: string;
+    userImage: string;
+    userDescription: string;
+}

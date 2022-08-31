@@ -1,4 +1,4 @@
-import { MinusCircleIcon, ShoppingCartIcon, UserIcon } from "@heroicons/react/solid";
+import { MinusCircleIcon, ShoppingCartIcon, UserIcon, XIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 import UserMiniTab from "../../UserMiniTab";
 
@@ -34,22 +34,26 @@ function DMsBody({ users } : Users) {
                 </div>
 
                 {/*LastDms */}
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col">
                     {
                         users.map(user => (
-                            <div className="flex items-center space-x-3 mx-2">
-                                <div className="relative mt-1">
-                                    <Image
-                                        className="relative rounded-full"
-                                        src={user.userImage}
-                                        width={40}
-                                        height={40}
-                                    />
-                                    <div className="absolute bottom-[2px] right-[-3px] bg-zinc-700 rounded-full">
-                                        <MinusCircleIcon className="h-[23px] p-[2px] text-red-600"/>
+                            <div className="flex items-center justify-between rounded-lg  hover:brightness-125 hover:bg-zinc-700 hover:shadow-sm group cursor-pointer">
+                                <div className="flex items-center space-x-3 p-1 mx-1">
+                                    <div className="relative mt-1">
+                                        <Image
+                                            className="relative rounded-full"
+                                            src={user.userImage}
+                                            width={40}
+                                            height={40}
+                                        />
+                                        <div className="absolute bottom-[2px] right-[-3px] bg-zinc-700 rounded-full">
+                                            <MinusCircleIcon className="h-[23px] p-[2px] text-red-600"/>
+                                        </div>
                                     </div>
+                                    <p className="text-zinc-400 text-lg">{user.userNickname}</p>
                                 </div>
-                                <p className="text-zinc-400 text-lg">{user.userNickname}</p>
+                                
+                                <XIcon className="invisible group-hover:visible h-5 text-zinc-400 mx-3 hover:text-zinc-300 "/>
                             </div>
                         ))
                     }
