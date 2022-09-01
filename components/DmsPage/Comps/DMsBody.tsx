@@ -29,7 +29,7 @@ function DMsBody({ users } : Users) {
 
                 {/*Add DM */}
                 <div className="flex justify-between items-center w-full group">
-                    <p className="text-zinc-400 text-md mx-2 font-medium group-hover:brightness-125">DIRECT MESSAGES</p>
+                    <p className="text-zinc-400 text-md mx-2 font-medium group-hover:brightness-125 cursor-default">DIRECT MESSAGES</p>
                     <p className="text-zinc-200 text-3xl mb-2 cursor-pointer">+</p>
                 </div>
 
