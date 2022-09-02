@@ -1,5 +1,5 @@
 import ActiveNowTab from "./Comps/ActiveNowTab"
-import FriendsTab from "./Comps/FriendsTab"
+import FriendsTab from "./Comps/FriendsPage/FriendsTab";
 
 function FriendsPage({users} : Users) {
   return (

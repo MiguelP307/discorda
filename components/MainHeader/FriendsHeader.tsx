@@ -1,11 +1,12 @@
 import { PlusCircleIcon, QuestionMarkCircleIcon, InboxIcon, UsersIcon } from "@heroicons/react/solid"
 
-function FriendsHeader( {onChange}, state : string ) {
+
+
+function FriendsHeader( {onChange}, state : String) {
 
   const handleClick = (event) => {
     event.preventDefault();
     onChange(event.target.id);
-    console.log(event.target.id);
 }
 
   return (

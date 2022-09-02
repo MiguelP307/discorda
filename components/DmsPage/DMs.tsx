@@ -3,7 +3,10 @@ import FriendsHeader from "../MainHeader/FriendsHeader";
 import DMsBody from "./Comps/DMsBody";
 import DMsHeader from "./Comps/DMsHeader";
 import { useState} from "react";
-
+import AllFriendsPage from "../MainDisplay/AllFriendsPage";
+import PendingPage from "../MainDisplay/PendingPage";
+import BlockedPage from "../MainDisplay/BlockedPage";
+import AddFriendPage from "../MainDisplay/AddFriendPage";
 
 
 function DMs({users} : Users) {
@@ -14,12 +17,12 @@ function DMs({users} : Users) {
       <div className="flex flex-col w-full h-full">
 
           {/* Header */}
-          
+            
             <div className="flex w-full h-14 z-50">
                 <DMsHeader/>
                 <FriendsHeader onChange={setHeaderButtonsState} state={headerButtonsState}/>
             </div>
-          
+            
 
           {/* Boddy */}
           
@@ -28,6 +31,22 @@ function DMs({users} : Users) {
 
               {headerButtonsState === "Online" && (
                 <FriendsPage users={users}/>
+              )}
+
+              {headerButtonsState === "All" && (
+                <AllFriendsPage/>
+              )}
+
+              {headerButtonsState === "Pending" && (
+                <PendingPage/>
+              )}
+
+              {headerButtonsState === "Blocked" && (
+                <BlockedPage/>
+              )}
+
+              {headerButtonsState === "AddFriend" && (
+                <AddFriendPage/>
               )}
               
           </div>

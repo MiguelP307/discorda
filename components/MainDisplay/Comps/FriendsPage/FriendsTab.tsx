@@ -4,6 +4,7 @@ import Icons from "./Icons";
 
 
 function FriendsTab({users} : Users) {
+
   return (
     <div className="flex flex-col flex-grow bg-[#474750]">
 
@@ -24,7 +25,7 @@ function FriendsTab({users} : Users) {
         <div className="flex flex-col overflow-scroll">
             {
                 users.map(user => (
-                    <div className="flex justify-end items-center mx-10 border-t-[1.9px] group border-[#54545e] hover:bg-[#595965] rounded-lg md:justify-between cursor-pointer">
+                    <div className="flex justify-end items-center mx-10 border-t-[1.9px] group border-[#54545e] hover:bg-[#595965] rounded-lg md:justify-between cursor-pointer" key={user.userID}>
                         <div className="hidden md:inline-flex relative items-center p-2 space-x-4 overflow-hidden whitespace-nowrap">
                             {/*Pfp */}
                             <div className="flex">
