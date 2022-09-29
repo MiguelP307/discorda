@@ -1,12 +1,17 @@
-import { ChatIcon, DotsVerticalIcon, MinusCircleIcon } from "@heroicons/react/solid";
+import { MinusCircleIcon, XIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 import Icons from "./Icons";
 
 
-function FriendsTab({users} : Users) {
+function BlockedTab({users} : Users) {
 
-  return (
-    <div className="flex flex-col flex-grow bg-[#474750]">
+    function blockedUsers() {
+
+        return users.length;
+    }
+
+    return (
+        <div className="flex flex-col flex-grow bg-[#474750]">
 
         {/*Search tab */}
         <div className="flex flex-col">
@@ -18,10 +23,11 @@ function FriendsTab({users} : Users) {
                 />
             </div>
             <div className="flex justify-start items-center mx-10 my-4">
-                <p className="text-[#9d9da9] font-medium">ONLINE - {users.length}</p>
+                <p className="text-[#9d9da9] font-medium">BLOCKED - {blockedUsers()}</p>
             </div>
         </div>
-        {/* Friends List Online */}
+
+            {/* Friends List Online */}
         <div className="flex flex-col overflow-scroll">
             {
                 users.map(user => (
@@ -48,23 +54,23 @@ function FriendsTab({users} : Users) {
                                     <p className="text-zinc-200 text-xl font-bold">{user.userNickname}</p>
                                     <p className="opacity-0 group-hover:opacity-100 text-zinc-300 text-lg font-medium mt-[2px]">{user.userID}</p>
                                 </div>
-                                <p className="text-zinc-400 font-medium">{user.userStatus}</p>
+                                <p className="text-zinc-400 font-medium">Outgoing Friend Request</p>
                             </div>
                         </div>
                         
                         {/*Icons */}
                         <div className="flex justify-end items-center p-2 z-10 space-x-3 mr-1 bg-[#474750] group-hover:bg-[#595965]">
-                            <Icons Icon={ChatIcon}/>
-                            <Icons Icon={DotsVerticalIcon}/>
+                            <Icons Icon={XIcon}/>
                         </div>
-                       
                         
-                    </div>
-                ))
-            }
+                            
+                        </div>
+                    ))
+                }
+            </div>
+
         </div>
-    </div>
-  )
+    )
 }
 
-export default FriendsTab
+export default BlockedTab

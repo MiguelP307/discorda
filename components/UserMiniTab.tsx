@@ -11,6 +11,34 @@ const currentUser : User = {
     userStatus: "Online",
     userNickname: "Amber",
     userID: "#0001",
+    userPendingRequests: 
+    [{
+        userImage: "/Teste/userPFP_Test.jpg",
+        userStatus: "Online",
+        userNickname: "Amber",
+        userID: "#0001",
+        userPendingRequests: [],
+    },
+    {
+        userImage: "/Teste/userPFP_Test.jpg",
+        userStatus: "Offline",
+        userNickname: "Yoimiya da Wish",
+        userID: "#0002",
+        userPendingRequests: [],
+    },
+    {
+        userImage: "/Teste/userPFP_Test.jpg",
+        userStatus: "Do Not Disturb",
+        userNickname: "Collei on Fire",
+        userID: "#0003",
+        userPendingRequests: [],
+    },{
+      userImage: "/Teste/userPFP_Test.jpg",
+      userStatus: "Online",
+      userNickname: "Amber",
+      userID: "#0004",
+      userPendingRequests: [],
+  }]
 }
 
 

@@ -7,11 +7,14 @@ declare global {
         userStatus: string;
         userNickname: string;
         userID: string;
+        userFriendList: User[];
+        userPendingRequests: User[];
+        userBlockedUsers: User[];
      }
 
 
     interface Users {
-        users: [User];
+        users: User[];
     }
 } 
 
@@ -32,4 +35,5 @@ interface Profile {
     userTag: string;
     userImage: string;
     userDescription: string;
+    userPendingRequest: [Users];
 }

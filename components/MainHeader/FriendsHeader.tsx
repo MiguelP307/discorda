@@ -2,7 +2,7 @@ import { PlusCircleIcon, QuestionMarkCircleIcon, InboxIcon, UsersIcon } from "@h
 
 
 
-function FriendsHeader( {onChange}, state : String) {
+function FriendsHeader( {onChange, state} : any) {
 
   const handleClick = (event) => {
     event.preventDefault();

@@ -1,18 +1,145 @@
-import FriendsPage from "../MainDisplay/FriendsPage";
 import FriendsHeader from "../MainHeader/FriendsHeader";
 import DMsBody from "./Comps/DMsBody";
 import DMsHeader from "./Comps/DMsHeader";
 import { useState} from "react";
-import AllFriendsPage from "../MainDisplay/AllFriendsPage";
-import PendingPage from "../MainDisplay/PendingPage";
-import BlockedPage from "../MainDisplay/BlockedPage";
-import AddFriendPage from "../MainDisplay/AddFriendPage";
+import FriendsTab from "../MainDisplay/Comps/FriendsTab";
+import ActiveNowTab from "../MainDisplay/Comps/ActiveNowTab";
+import AllTab from "../MainDisplay/Comps/AllTab";
+import PendingTab from "../MainDisplay/Comps/PendingTab";
+import BlockedTab from "../MainDisplay/Comps/BlockedTab";
 
 
-function DMs({users} : Users) {
+const currentUser : User = {
+  userImage: "/Teste/userPFP_Test.jpg",
+  userStatus: "Online",
+  userNickname: "Amber",
+  userID: "#0001",
+  userFriendList: 
+  [{
+    userImage: "/Teste/userPFP_Test.jpg",
+    userStatus: "Online",
+    userNickname: "Amber",
+    userID: "#0001",
+    userPendingRequests: [],
+    userFriendList: [],
+  userBlockedUsers: [],
+  },
+  {
+      userImage: "/Teste/userPFP_Test.jpg",
+      userStatus: "Offline",
+      userNickname: "Yoimiya da Wish",
+      userID: "#0002",
+      userPendingRequests: [],
+      userFriendList: [],
+  userBlockedUsers: [],
+  },
+  {
+      userImage: "/Teste/userPFP_Test.jpg",
+      userStatus: "Do Not Disturb",
+      userNickname: "Collei on Fire",
+      userID: "#0003",
+      userPendingRequests: [],
+      userFriendList: [],
+  userBlockedUsers: [],
+  },{
+    userImage: "/Teste/userPFP_Test.jpg",
+    userStatus: "Online",
+    userNickname: "Amber",
+    userID: "#0004",
+    userPendingRequests: [],
+    userFriendList: [],
+  userBlockedUsers: [],
+  },
+  {
+    userImage: "/Teste/userPFP_Test.jpg",
+    userStatus: "Offline",
+    userNickname: "Yoimiya da Wish",
+    userID: "#0005",
+    userPendingRequests: [],
+    userFriendList: [],
+  userBlockedUsers: [],
+  },
+  {
+    userImage: "/Teste/userPFP_Test.jpg",
+    userStatus: "Do Not Disturb",
+    userNickname: "Collei on Fire",
+    userID: "#0006",
+    userPendingRequests: [],
+    userBlockedUsers: [],
+    userFriendList: [],
+  },{
+  userImage: "/Teste/userPFP_Test.jpg",
+  userStatus: "Online",
+  userNickname: "Amber",
+  userID: "#0007",
+  userPendingRequests: [],
+  userFriendList: [],
+  userBlockedUsers: [],
+  }],
+
+  userPendingRequests: 
+  [{
+      userImage: "/Teste/userPFP_Test.jpg",
+      userStatus: "Online",
+      userNickname: "Amber",
+      userID: "#0001",
+      userPendingRequests: [],
+      userFriendList: [],
+      userBlockedUsers: [],
+  },
+  {
+      userImage: "/Teste/userPFP_Test.jpg",
+      userStatus: "Offline",
+      userNickname: "Yoimiya da Wish",
+      userID: "#0002",
+      userPendingRequests: [],
+      userFriendList: [],
+      userBlockedUsers: [],
+  },
+  {
+      userImage: "/Teste/userPFP_Test.jpg",
+      userStatus: "Do Not Disturb",
+      userNickname: "Collei on Fire",
+      userID: "#0003",
+      userPendingRequests: [],
+      userFriendList: [],
+      userBlockedUsers: [],
+  },{
+    userImage: "/Teste/userPFP_Test.jpg",
+    userStatus: "Online",
+    userNickname: "Amber",
+    userID: "#0004",
+    userPendingRequests: [],
+    userFriendList: [],
+    userBlockedUsers: [],
+}],
+  userBlockedUsers: [
+      {
+          userImage: "/Teste/userPFP_Test.jpg",
+          userStatus: "Do Not Disturb",
+          userNickname: "Collei on Fire",
+          userID: "#0003",
+          userPendingRequests: [],
+          userFriendList: [],
+          userBlockedUsers: [],
+      },{
+        userImage: "/Teste/userPFP_Test.jpg",
+        userStatus: "Online",
+        userNickname: "Amber",
+        userID: "#0004",
+        userPendingRequests: [],
+        userFriendList: [],
+        userBlockedUsers: [],
+    }
+  ],
+}
+
+
+
+function DMs() {
 
   const [ headerButtonsState, setHeaderButtonsState ] = useState("Online");
-
+  
   return (
       <div className="flex flex-col w-full h-full">
 
@@ -27,28 +154,39 @@ function DMs({users} : Users) {
           {/* Boddy */}
           
           <div className="flex h-full w-full overflow-hidden">
-              <DMsBody users={users}/>
+              <DMsBody users={currentUser.userFriendList}/>
 
               {headerButtonsState === "Online" && (
-                <FriendsPage users={users}/>
+                <div className="flex flex-grow h-full">
+                  <FriendsTab users={currentUser.userFriendList}/>
+                </div>
               )}
 
               {headerButtonsState === "All" && (
-                <AllFriendsPage/>
+                <div className="flex flex-grow h-full">
+                  <AllTab users={currentUser.userFriendList}/>
+                </div>
               )}
 
               {headerButtonsState === "Pending" && (
-                <PendingPage/>
+                <div className="flex flex-grow h-full">
+                  <PendingTab users={currentUser.userPendingRequests}/>
+                </div>
               )}
 
               {headerButtonsState === "Blocked" && (
-                <BlockedPage/>
+                <div className="flex flex-grow h-full">
+                  <BlockedTab users={currentUser.userBlockedUsers}/>
+                </div>
               )}
 
               {headerButtonsState === "AddFriend" && (
-                <AddFriendPage/>
+                <div className="flex flex-grow h-full">
+                
+                </div>
               )}
               
+              <ActiveNowTab/>
           </div>
       </div>
     
