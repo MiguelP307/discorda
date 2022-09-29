@@ -2,12 +2,17 @@ import { PlusCircleIcon, QuestionMarkCircleIcon, InboxIcon, UsersIcon } from "@h
 
 
 
-function FriendsHeader( {onChange, state} : any) {
+function FriendsHeader( {onChange, state, setVisible} : any) {
+
+  const popupClick = (event) => {
+    event.preventDefault();
+    setVisible(true);
+  }
 
   const handleClick = (event) => {
     event.preventDefault();
     onChange(event.target.id);
-}
+  }
 
   return (
     <div className="mainHeader">
@@ -43,7 +48,7 @@ function FriendsHeader( {onChange, state} : any) {
 
             {/* Add Friend */}
             <div>
-              <p className={`p-[6px] text-white bg-green-700 rounded-md cursor-pointer px-2 text-lg ${state === "AddFriend" && "text-gree-700 bg-[#474750]"}`} id="AddFriend" onClick={handleClick}>Add Friend</p>
+              <p className={`p-[6px] text-white bg-green-700 rounded-md cursor-pointer px-2 text-lg ${state === "AddFriend" && "text-green-500 bg-[#474750]"}`} id="AddFriend" onClick={popupClick}>Add Friend</p>
             </div>
         </div>
       </div>
@@ -58,7 +63,7 @@ function FriendsHeader( {onChange, state} : any) {
         </div>
       </div>
     </div>
-  )
+  ) 
 }
 
 export default FriendsHeader

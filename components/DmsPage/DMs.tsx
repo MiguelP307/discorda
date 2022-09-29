@@ -7,6 +7,7 @@ import ActiveNowTab from "../MainDisplay/Comps/ActiveNowTab";
 import AllTab from "../MainDisplay/Comps/AllTab";
 import PendingTab from "../MainDisplay/Comps/PendingTab";
 import BlockedTab from "../MainDisplay/Comps/BlockedTab";
+import AddFriendTab from "../MainDisplay/Comps/AddFriendTab";
 
 
 const currentUser : User = {
@@ -139,6 +140,7 @@ const currentUser : User = {
 function DMs() {
 
   const [ headerButtonsState, setHeaderButtonsState ] = useState("Online");
+  const [ isVisible, setIsVisible ] = useState(false);
   
   return (
       <div className="flex flex-col w-full h-full">
@@ -147,7 +149,7 @@ function DMs() {
             
             <div className="flex w-full h-14 z-50">
                 <DMsHeader/>
-                <FriendsHeader onChange={setHeaderButtonsState} state={headerButtonsState}/>
+                <FriendsHeader onChange={setHeaderButtonsState} state={headerButtonsState} setVisible={setIsVisible}/>
             </div>
             
 
@@ -180,11 +182,7 @@ function DMs() {
                 </div>
               )}
 
-              {headerButtonsState === "AddFriend" && (
-                <div className="flex flex-grow h-full">
-                
-                </div>
-              )}
+              <AddFriendTab visible={isVisible} setVisible={setIsVisible}/>
               
               <ActiveNowTab/>
           </div>
