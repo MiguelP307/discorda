@@ -60,7 +60,7 @@ function UserMiniTab() {
                 </div>
             </div>
             <div className="flex flex-col items-start">
-                <p className="text-zinc-400 text-xl">{currentUser.userNickname}</p>
+                <p className="text-zinc-300 text-xl font-bold">{currentUser.userNickname}</p>
                 <p className="text-zinc-500 text-sm">{currentUser.userID}</p>
             </div>
         </div>

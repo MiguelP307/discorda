@@ -43,7 +43,7 @@ function BlockedTab({users} : Users) {
                                     <p className="text-zinc-200 text-xl font-bold">{user.userNickname}</p>
                                     <p className="opacity-0 group-hover:opacity-100 text-zinc-300 text-lg font-medium mt-[2px]">{user.userID}</p>
                                 </div>
-                                <p className="text-zinc-400 font-medium">Outgoing Friend Request</p>
+                                <p className="text-zinc-400 font-medium">Blocked</p>
                             </div>
                         </div>
                         
