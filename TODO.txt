@@ -1,0 +1,5 @@
+Fazer as ceninhas para os varios scaling de ecra, no header, store e afins
+Meter as labels e etc tudo com select-none
+Meter funcoes para remover pessoas das listas de pending e block
+Fzr chats pessoais
+Criar servers
