@@ -19,7 +19,7 @@ const currentUser : User = {
   [{
     userImage: "/Teste/userPFP_Test.jpg",
     userStatus: "Online",
-    userNickname: "Amber",
+    userNickname: "Amberr",
     userID: "#0001",
     userPendingRequests: [],
     userFriendList: [],
@@ -136,11 +136,11 @@ const currentUser : User = {
 }
 
 
-
 function DMs() {
 
   const [ headerButtonsState, setHeaderButtonsState ] = useState("Online");
   const [ isVisible, setIsVisible ] = useState(false);
+
   
   return (
       <div className="flex flex-col w-full h-full">
@@ -156,7 +156,7 @@ function DMs() {
           {/* Boddy */}
           
           <div className="flex h-full w-full overflow-hidden">
-              <DMsBody users={currentUser.userFriendList}/>
+              <DMsBody users={currentUser.userFriendList} Route="DMs"/>
 
               {headerButtonsState === "Online" && (
                 <div className="flex flex-grow h-full">

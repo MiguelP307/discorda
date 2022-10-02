@@ -55,7 +55,7 @@ function UserMiniTab() {
                     width={46}
                     height={46}
                 />
-                <div className="absolute bottom-[2px] right-[-3px] bg-zinc-700 rounded-full">
+                <div className="absolute bottom-[2px] right-[-3px] bg-[#2d2d33] rounded-full">
                     <MinusCircleIcon className="h-[23px] p-[2px] text-red-600"/>
                 </div>
             </div>

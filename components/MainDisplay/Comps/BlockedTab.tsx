@@ -1,25 +1,30 @@
 import { MinusCircleIcon, XIcon } from "@heroicons/react/solid";
 import Image from "next/image";
+import { useState } from "react";
 import Icons from "./Icons";
 import SearchBar from "./SearchBar";
 
 
 function BlockedTab({users} : Users) {
 
+    let initialUser : User[] = users;
+
+    const [ newUsers, setnewUsers ] = useState(initialUser);
+
     function blockedUsers() {
 
-        return users.length;
+        return newUsers.length;
     }
 
     return (
         <div className="flex flex-col flex-grow bg-[#474750]">
 
-        <SearchBar userNum={blockedUsers()} statusName="BLOCKED"/>
+        <SearchBar userNum={blockedUsers()} statusName="BLOCKED" setnewUsers={setnewUsers} users={users} />
 
             {/* Friends List Online */}
         <div className="flex flex-col overflow-scroll">
             {
-                users.map(user => (
+                newUsers.map(user => (
                     <div className="flex justify-end items-center mx-10 border-t-[1.9px] group border-[#54545e] hover:bg-[#595965] rounded-lg md:justify-between cursor-pointer" key={user.userID}>
                         <div className="hidden md:inline-flex relative items-center p-2 space-x-4 overflow-hidden whitespace-nowrap">
                             {/*Pfp */}

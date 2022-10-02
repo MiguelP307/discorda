@@ -1,10 +1,24 @@
 import { MinusCircleIcon, ShoppingCartIcon, UserIcon, XIcon } from "@heroicons/react/solid";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import UserMiniTab from "../../UserMiniTab";
 
 
 
-function DMsBody({ users } : Users) {
+function DMsBody({users, Route} : any) {
+
+    const router = useRouter();
+
+    console.log(Route);
+
+    const handleClickStore = () => {
+        router.push("/store");
+    }
+
+    const handleClickFriends = () => {
+        router.push("/")
+    }
+
   return (
     <div className="flex flex-col w-72 h-full">
         <div className="channel-dms-body">
@@ -12,11 +26,11 @@ function DMsBody({ users } : Users) {
 
             {/*Buttons*/}
             <div className="flex flex-col w-full gap-1">
-                <div className="channel-dms-button">
+                <div className={` channel-dms-button ${Route === "DMs" ? "bg-zinc-700 brightness-125" : ""}`} onClick={handleClickFriends}>
                     <UserIcon className="channel-dms-icons"/>
                     <p className="channel-dms-button-text">Friends</p>
                 </div>
-                <div className="channel-dms-button">
+                <div className={` channel-dms-button ${Route === "Store" && "bg-zinc-700 brightness-125"}`} onClick={handleClickStore}>
                     <ShoppingCartIcon className="channel-dms-icons"/>
                     <p className="channel-dms-button-text">Store</p>
                 </div>

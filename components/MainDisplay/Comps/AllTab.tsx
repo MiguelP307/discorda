@@ -1,21 +1,27 @@
 import { ChatIcon, DotsVerticalIcon, MinusCircleIcon } from "@heroicons/react/solid";
 import Image from "next/image";
+import { useState } from "react";
 import Icons from "./Icons";
 import SearchBar from "./SearchBar";
 
 
 
 function AllTab({users} : Users) {
+
+    let initialUser : User[] = users;
+
+    const [ newUsers, setnewUsers ] = useState(initialUser);
+
   return (
       <div className="flex flex-col flex-grow bg-[#474750]">
 
-      <SearchBar userNum={users.length} statusName="ALL FRIENDS"/>
+      <SearchBar userNum={users.length} statusName="ALL FRIENDS" setnewUsers={setnewUsers} users={users}/>
 
 
       {/* All Friends */}
       <div className="flex flex-col overflow-scroll">
           {
-              users.map(user => (
+              newUsers.map(user => (
                   <div className="flex justify-end items-center mx-10 border-t-[1.9px] group border-[#54545e] hover:bg-[#595965] rounded-lg md:justify-between cursor-pointer" key={user.userID}>
                       <div className="hidden md:inline-flex relative items-center p-2 space-x-4 overflow-hidden whitespace-nowrap">
                           {/*Pfp */}

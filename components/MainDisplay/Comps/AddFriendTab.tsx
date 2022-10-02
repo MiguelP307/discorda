@@ -41,7 +41,7 @@ function AddFriendTab({visible, setVisible} : any) {
                   type="text"
                   onChange={handleOnChange}
               />
-              <button className={`rounded-md bg-[#1a5fcf] h-[60px] text-xl font-semibold whitespace-nowrap mx-2 p-3 text-zinc-200 ${activeButton === false && "cursor-not-allowed brightness-50"}`} type="submit">
+              <button className={`rounded-md bg-[#1a5fcf] h-[60px] text-xl font-semibold whitespace-nowrap mx-2 p-3 text-zinc-200 hover:bg-[#164ba1] active:bg-[#113571]  duration-200 ${activeButton === false && "cursor-not-allowed brightness-50"}`} type="submit">
                  Send Friend Request
               </button>
           </div>

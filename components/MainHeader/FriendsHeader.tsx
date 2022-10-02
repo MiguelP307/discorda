@@ -9,6 +9,7 @@ function FriendsHeader( {onChange, state, setVisible} : any) {
     setVisible(true);
   }
 
+
   const handleClick = (event) => {
     event.preventDefault();
     onChange(event.target.id);
@@ -28,27 +29,27 @@ function FriendsHeader( {onChange, state, setVisible} : any) {
           <div className="flex justify-items-center space-x-5">
             {/* Online Button */}
             <div>
-              <p className={`p-[6px] text-zinc-400 hover:bg-zinc-700 hover:text-zinc-200 rounded-md cursor-pointer px-2 text-lg ${state === "Online" && "bg-zinc-700"}`} id="Online" onClick={handleClick}>Online</p>
+              <p className={`p-[6px] text-zinc-400 hover:bg-zinc-700 hover:text-zinc-200 duration-150 rounded-md cursor-pointer px-2 text-lg ${state === "Online" && "bg-zinc-700 text-zinc-200"}`} id="Online" onClick={handleClick}>Online</p>
             </div>
 
             {/* All Button */}
             <div>
-              <p className={`p-[6px] text-zinc-400 hover:bg-zinc-700 hover:text-zinc-200 rounded-md cursor-pointer px-2 text-lg ${state === "All" && "bg-zinc-700"}`} id="All" onClick={handleClick}>All</p>
+              <p className={`p-[6px] text-zinc-400 hover:bg-zinc-700 hover:text-zinc-200 duration-150 rounded-md cursor-pointer px-2 text-lg ${state === "All" && "bg-zinc-700 text-zinc-200"}`} id="All" onClick={handleClick}>All</p>
             </div>
 
             {/* Pending Button */}
             <div>
-              <p className={`p-[6px] text-zinc-400 hover:bg-zinc-700 hover:text-zinc-200 rounded-md cursor-pointer px-2 text-lg ${state === "Pending" && "bg-zinc-700"}`} id="Pending" onClick={handleClick}>Pending</p>
+              <p className={`p-[6px] text-zinc-400 hover:bg-zinc-700 hover:text-zinc-200 duration-150 rounded-md cursor-pointer px-2 text-lg ${state === "Pending" && "bg-zinc-700 text-zinc-200"}`} id="Pending" onClick={handleClick}>Pending</p>
             </div>
 
             {/* Blocked Button */}
             <div>
-              <p className={`p-[6px] text-zinc-400 hover:bg-zinc-700 hover:text-zinc-200 rounded-md cursor-pointer px-2 text-lg ${state === "Blocked" && "bg-zinc-700"}`} id="Blocked" onClick={handleClick}>Blocked</p>
+              <p className={`p-[6px] text-zinc-400 hover:bg-zinc-700 hover:text-zinc-200 duration-150 rounded-md cursor-pointer px-2 text-lg ${state === "Blocked" && "bg-zinc-700 text-zinc-200"}`} id="Blocked" onClick={handleClick}>Blocked</p>
             </div>
 
             {/* Add Friend */}
-            <div>
-              <p className={`p-[6px] text-white bg-green-700 rounded-md cursor-pointer px-2 text-lg ${state === "AddFriend" && "text-green-500 bg-[#474750]"}`} id="AddFriend" onClick={popupClick}>Add Friend</p>
+            <div className="ease-in-out hover:scale-105 duration-300">
+              <p className="p-[6px] text-white bg-green-700 rounded-md cursor-pointer px-2 text-lg" id="AddFriend" onClick={popupClick}>Add Friend</p>
             </div>
         </div>
       </div>

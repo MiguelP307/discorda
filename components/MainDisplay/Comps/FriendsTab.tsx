@@ -1,5 +1,6 @@
 import { ChatIcon, DotsVerticalIcon, MinusCircleIcon } from "@heroicons/react/solid";
 import Image from "next/image";
+import { useState } from "react";
 import Icons from "./Icons";
 import SearchBar from "./SearchBar";
 
@@ -7,11 +8,16 @@ import SearchBar from "./SearchBar";
 
 function FriendsTab({users} : Users) {
 
+    let initialUser : User[] = users;
+
+    const [ newUsers, setnewUsers ] = useState(initialUser);
+
+
     function onlineUsers() {
 
         let onlineUsers = 0;
         
-        users.map(user => {
+        newUsers.map(user => {
             if(user.userStatus === "Online") 
                 onlineUsers++;
 
@@ -24,13 +30,14 @@ function FriendsTab({users} : Users) {
   return (
     <div className="flex flex-col flex-grow bg-[#474750]">
 
-        <SearchBar userNum={onlineUsers()} statusName="ONLINE"/>
+
+        <SearchBar userNum={onlineUsers()} statusName="ONLINE" setnewUsers={setnewUsers} users={users}/>
 
 
         {/* Friends List Online */}
         <div className="flex flex-col overflow-scroll">
             {
-                users.map(user => {
+                newUsers.map(user => {
                     
                     if(user.userStatus === "Online")
                     {
