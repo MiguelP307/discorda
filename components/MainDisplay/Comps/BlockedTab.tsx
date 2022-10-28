@@ -58,7 +58,6 @@ function BlockedTab({users} : Users) {
                             </div>
                         </div>
                         
-                        {/* NOT WORKING ICON CANT GET AN ID I DK WHY */}
 
                         {/*Icons */}
                         <div className=" flex justify-end items-center p-2 space-x-3 mr-1 bg-transparent " onClick={handleClick} id={user.userID} >

@@ -1,5 +1,5 @@
 Fazer as ceninhas para os varios scaling de ecra, no header, store e afins
 Aprender a usar os types do typescript
-Meter funcoes para remover pessoas das listas de pending e block
+Fazer confirmacoes para remover pessoas da blocklist e pending list.
 Fzr chats pessoais
 Criar servers

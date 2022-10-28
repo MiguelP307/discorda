@@ -1,6 +1,7 @@
 import { MinusCircleIcon, XIcon } from "@heroicons/react/solid"
 import Image from "next/image"
 import { useState } from "react";
+import { removeUser } from "../../../funcs/friendsFuncs";
 import Icons from "./Icons"
 import SearchBar from "./SearchBar";
 
@@ -16,6 +17,12 @@ function PendingTab({users} : Users) {
         return newUsers.length;
     }
     
+    const handleClick = (event : any) => {
+        event.preventDefault();
+        
+        setnewUsers([...removeUser(newUsers, event.target.id)]); // We need to get a new Array so useState wont re-render
+    }
+
   return (
     <div className="flex flex-col flex-grow bg-[#474750]">
 
@@ -53,8 +60,8 @@ function PendingTab({users} : Users) {
                       </div>
                       
                       {/*Icons */}
-                      <div className="flex justify-end items-center p-2 z-10 space-x-3 mr-1 bg-[#474750] group-hover:bg-[#595965]">
-                          <Icons Icon={XIcon}/>
+                      <div className="flex justify-end items-center p-2 space-x-3 mr-1 bg-transparent" onClick={handleClick} id={user.userID}>
+                          <Icons Icon={XIcon} UID={user.userID}/>
                       </div>
                       
                         
